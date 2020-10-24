@@ -1,5 +1,14 @@
 server.port: 8080
 
+
+spring:
+  redis:
+    database: 0
+    host: ext-a.kubesail.io
+    port: 35882
+    password:
+    timeout: 10_000
+
 order:
   name: 显卡
   list:
