@@ -1,13 +1,23 @@
-server.port: 8080
+## spring-boot-data-jpa
 
+1: 导入依赖jar
 
+```
+<dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+<dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>runtime</scope>
+</dependency>
+```
+
+2: 配置 application.yml
+
+```
 spring:
-  redis:
-    database: 0
-    host: ext-a.kubesail.io
-    port: 35882
-    password:
-    timeout: 10_000
   datasource:
     # 数据库连接信息
     url: jdbc:mysql://ext-a.kubesail.io:42964/demo?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
@@ -35,18 +45,7 @@ spring:
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: false
 
-order:
-  name: 显卡
-  list:
-    - GTX 2060
-    - GTX 2080Ti
-    - GTX 3080
-  maps:
-    CPU: 10400f散
-    zhuban: 微星b460M迫击炮
-    neicun: 英睿达8G*2 c9bjz ddr4 3000频率
-    xianshiqi: 宏碁EG240YP显示器
-    dianyuan: 航嘉HYPER金牌全模组650w电源
-    yingpan: 蓝盘SN550 500G固态+1T机械
-    jixiang: 航嘉GS500C机箱
-    散热: 玄冰400
+```
+
+
+3: 定义 Entity
