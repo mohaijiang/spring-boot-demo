@@ -3,11 +3,12 @@
 ### 相关技术栈
 
 * 01 lombok
-* 02 spring-data-redis
-* 03 spring-data-jpa
-* 04 h2 + flyway
-* 05 restful + swagger-ui
-* 06 junit
+* 02 spring-boot config
+* 03 spring-data-redis
+* 04 spring-data-jpa
+* 05 h2 + flyway
+* 06 restful + swagger-ui
+* 07 junit
 
 ### 案例
 
