@@ -2,8 +2,6 @@ server.port: 8080
 
 
 spring:
-  profiles:
-    active: h2
   redis:
     database: 0
     host: ext-a.kubesail.io
@@ -12,21 +10,30 @@ spring:
     timeout: 10_000
   datasource:
     # 数据库连接信息
-    url: jdbc:mysql://ext-a.kubesail.io:42964/demo?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
-    # 数据库用户名
-    username: root
-    # 数据库密码
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: h2
+    url: jdbc:h2:mem:demo
+    ##  url: jdbc:h2:file:E:/H2/demo;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+#    schema: classpath:db/schema.sql #，每次启动程序，程序都会运行schema.sql文件，对数据库的数据操作
+#    data: classpath:db/data.sql #，每次启动程序，程序都会运行data.sql文件，对数据库的数据操作
     hikari:
       connection-test-query: SELECT 1 FROM DUAL
       connection-timeout: 30000
       maximum-pool-size: 20
       max-lifetime: 1800000
       minimum-idle: 5
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        trace: false
+        web-allow-others: false
   jpa:
-    database-platform: org.hibernate.dialect.MySQL5Dialect
-    database: MySQL
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: H2
     openInView: false
     show_sql: true
     generate-ddl: true
