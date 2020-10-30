@@ -56,3 +56,25 @@ spring:
 访问地址: http://localhost:8080/h2
 
 spring security 权限验证环境下，需要将h2端点全部免认证或认证通过后进入
+
+
+## flyway 介绍
+
+
+### 介绍
+lyway是一款开源的数据库版本管理工具，Flyway可以独立于应用实现管理并跟踪数据库的变更，Flyway根据自己的约定，不需要复杂的配置就可以实现数据的Migrate。Migrations可以写成SQL脚本，也可以写在Java代码中，Flyway还支持Spring Boot。
+
+
+### 原理
+
+
+### 命名规范
+![命名规范](image/flyway.png)
+
+版本号： 允许整数，小数，但是不允许重复,小于最新的版本号(默认)
+
+
+### flyway 冲突解决
+
+方案1： 退回版本
+方案2： 人工校对版本信息，合并操作后，修改hash值
