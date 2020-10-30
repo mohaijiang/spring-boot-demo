@@ -16,12 +16,12 @@ spring:
     username: sa
     password:
     driver-class-name: org.h2.Driver
-#    schema: classpath:db/schema.sql #，每次启动程序，程序都会运行schema.sql文件，对数据库的数据操作
+#    schema: classpath:db/migration/h2/V1__INIT.sql #，每次启动程序，程序都会运行schema.sql文件，对数据库的数据操作
 #    data: classpath:db/data.sql #，每次启动程序，程序都会运行data.sql文件，对数据库的数据操作
     hikari:
       connection-test-query: SELECT 1 FROM DUAL
       connection-timeout: 30000
-      maximum-pool-size: 20
+      maximum-pOool-size: 20
       max-lifetime: 1800000
       minimum-idle: 5
   h2:
@@ -36,13 +36,17 @@ spring:
     database: H2
     openInView: false
     show_sql: true
-    generate-ddl: true
+    generate-ddl: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
       naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
     properties:
       hibernate.cache.use_query_cache: false
       hibernate.generate_statistics: false
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration/{vendor}
 
 order:
   name: 显卡
