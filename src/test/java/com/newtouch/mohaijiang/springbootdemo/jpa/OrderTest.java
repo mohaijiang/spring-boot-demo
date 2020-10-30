@@ -74,7 +74,7 @@ public class OrderTest {
     @Test
     public void testPage(){
         Pageable pageable = PageRequest.of(0,10);
-        Page<Order> page = orderRepository.findByStatus(0,pageable);
+        Page<Order> page = orderRepository.findByStatusOrderByOrderNoDesc(0,pageable);
         System.out.println(page.getContent());
     }
 

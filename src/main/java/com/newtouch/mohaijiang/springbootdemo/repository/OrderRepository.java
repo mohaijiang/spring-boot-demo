@@ -20,6 +20,8 @@ public interface OrderRepository extends CrudRepository<Order,Long> {
      */
     Order findTop1ByOrderNo(String orderNo);
 
+    Order findTopByOrderByOrderNoDesc();
+
     /**
      * 允许 Optional 查询
      * @param orderNo

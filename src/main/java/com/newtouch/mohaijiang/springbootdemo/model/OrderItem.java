@@ -1,8 +1,6 @@
 package com.newtouch.mohaijiang.springbootdemo.model;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -15,6 +13,9 @@ import java.math.BigDecimal;
 @ToString(exclude = {"order"})
 @Entity
 @Table(name="t_order_item")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class OrderItem {
 
     /**
