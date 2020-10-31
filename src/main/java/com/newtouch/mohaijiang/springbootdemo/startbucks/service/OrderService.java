@@ -56,7 +56,7 @@ public class OrderService {
             this.calculateCost(source);
         }
 
-        if(!source.getAdditions().equals(order.getAdditions())){
+        if(source.getAdditions() != null && !source.getAdditions().equals(order.getAdditions())){
             source.setAdditions(order.getAdditions());
             this.calculateCost(source);
         }

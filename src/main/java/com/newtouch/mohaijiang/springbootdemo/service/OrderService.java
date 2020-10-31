@@ -14,8 +14,8 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Slf4j
-@Service
-@Transactional(rollbackOn = Exception.class)
+//@Service
+//@Transactional(rollbackOn = Exception.class)
 public class OrderService {
 
     @Autowired
